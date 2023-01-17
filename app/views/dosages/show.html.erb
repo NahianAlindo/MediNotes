@@ -23,6 +23,7 @@
   <strong>Comments:</strong>
   <%= @dosage.comments %>
 </p>
-
+<% if can? :manage, Dosage %>
 <%= link_to 'Edit', edit_patient_dosage_path([@patient, @dosage]) %>
+<% end %>
 <%= link_to 'Back', [@patient, :dosages] %>

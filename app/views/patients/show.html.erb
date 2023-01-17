@@ -9,11 +9,23 @@
   <strong>Contact number:</strong>
   <%= @patient.contact_number %>
 </p>
+<% if can? :manage, Patient %>
+  <%= link_to 'Edit', edit_patient_path(@patient) %>
+<% end %>
 
-<%= link_to 'Edit', edit_patient_path(@patient) %>
-<%= link_to 'Back', patients_path %>
-<%= link_to "New dosage", new_patient_dosage_path(@patient) %>
-<%= link_to "Prescribe", new_patient_prescription_path(@patient) %>
+<% if can? :manage, Dosage %>
+  <%= link_to "New dosage", new_patient_dosage_path(@patient) %>
+<% end %>
+
+<% if can? :manage, Prescription %>
+  <%= link_to "Prescribe", new_patient_prescription_path(@patient) %>
+  <%= link_to "Prescription log", patient_prescriptions_path(@patient) %>
+<% end %>
+
 <% if @patient.dosages.count>0 %>
   <%= link_to 'Dosage Data', [@patient, :dosages] %>
+<% end %>
+
+<% if can? :read, Prescription %>
+<%= render partial: "prescription", locals: { patient: @patient } %>
 <% end %>

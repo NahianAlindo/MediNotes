@@ -1,4 +1,5 @@
 class DosagesController < ApplicationController
+  load_and_authorize_resource
   before_action :set_patient
   before_action :set_dosage, only: %i[ show edit update destroy ]
 
@@ -42,7 +43,7 @@ class DosagesController < ApplicationController
   def update
     respond_to do |format|
       if @dosage.update(dosage_params)
-        format.html { redirect_to dosage_url(@dosage), notice: "Dosage was successfully updated." }
+        format.html { redirect_to patient_dosages_url, notice: "Dosage was successfully updated." }
         format.json { render :show, status: :ok, location: @dosage }
       else
         format.html { render :edit, status: :unprocessable_entity }

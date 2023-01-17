@@ -21,25 +21,26 @@
 
 
 <h1>Dosages</h1>
-<table class="center">
+<table class="center" id="table">
   <thead>
   <tr>
+    <% if can? :manage, Dosage %>
     <td>
       <%= link_to 'New Dosage', new_patient_dosage_path %>
     </td>
-  </tr><tr>
+    <% end %>
     <td>
-      <%= link_to 'Patient Details', patient_path(@patient) %>
+      <%= link_to 'Back', patient_path(@patient) %>
     </td>
   </tr>
   </thead>
 
   <tbody>
-    <td>Timestamp</td>
-    <td>Blood Sugar</td>
-    <td>Prescribed Insulin</td>
-    <td>Applied Insulin</td>
-    <td>Comments</td>
+    <th>Timestamp</th>
+    <th>Blood Sugar</th>
+    <th>Prescribed Insulin</th>
+    <th>Applied Insulin</th>
+    <th>Comments</th>
     <% @dosages.each do |dosage| %>
       <tr class="<%=cycle('list_line_odd', 'list_line_even') %>">
         <td>
@@ -58,7 +59,10 @@
           <%= dosage.comments %>
         </td>
         <td><%= link_to 'Show', patient_dosage_path(@patient, dosage) %></td>
+        <% if can? :manage, Dosage %>
         <td><%= link_to 'Edit', edit_patient_dosage_path(@patient,dosage) %></td>
+        <td><%= button_to 'Delete', [@patient,dosage], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

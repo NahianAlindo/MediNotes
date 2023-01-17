@@ -4,17 +4,17 @@
 
 <p>
   <strong>Prescribed on:</strong>
-  <%= @prescription.prescribed_on %>
+  <%= @prescription.prescribed_on.strftime("%d-%m-%Y, %I:%M%p") %>
 </p>
 
 <p>
   <strong>Start date:</strong>
-  <%= @prescription.start_date %>
+  <%= @prescription.start_date.strftime("%d-%m-%Y") %>
 </p>
 
 <p>
   <strong>End date:</strong>
-  <%= @prescription.end_date %>
+  <%= @prescription.end_date.strftime("%d-%m-%Y") %>
 </p>
 
 <p>
