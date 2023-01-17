@@ -1,0 +1,25 @@
+<div id="<%= dom_id dosage %>" class="scaffold_record">
+  <p>
+    <strong>Applied on: </strong>
+    <%= dosage.timestamp %>
+  </p>
+
+  <p>
+    <strong>Blood Sugar Level: </strong>
+    <%= dosage.blood_sugar_level %>
+  </p>
+
+  <p>
+    <strong>Prescribed Insulin: </strong>
+    <%= dosage.prescribed_insulin %>
+  </p>
+
+  <p>
+    <strong>Applied Insulin:</strong>
+    <%= dosage.applied_insulin %>
+  </p>
+
+  <p>
+    <%= link_to "Show", [@patient, dosage] %>
+  </p>
+</div>

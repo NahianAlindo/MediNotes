@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  timestamp: 2023-01-15 18:28:04
+  blood_sugar_level: 1
+  prescribed_insulin: 1
+  applied_insulin: 1
+  patient: one
+
+two:
+  timestamp: 2023-01-15 18:28:04
+  blood_sugar_level: 1
+  prescribed_insulin: 1
+  applied_insulin: 1
+  patient: two

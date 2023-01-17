@@ -1,0 +1,67 @@
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+<p>
+  <strong>Name:</strong>
+  <%= @patient.name %>
+</p>
+<p>
+  <strong>Contact Number:</strong>
+  <%= @patient.contact_number %>
+</p>
+  <p>
+    <strong>Average Blood Sugar Level:</strong>
+    <%= @dosages.sum(:blood_sugar_level) / @dosages.count %>
+  </p>
+  <p>
+    <strong>Average Applied Insulin:</strong>
+    <%= @dosages.sum(:applied_insulin) / @dosages.count %>
+  </p>
+
+
+
+<h1>Dosages</h1>
+<table class="center">
+  <thead>
+  <tr>
+    <td>
+      <%= link_to 'New Dosage', new_patient_dosage_path %>
+    </td>
+  </tr><tr>
+    <td>
+      <%= link_to 'Patient Details', patient_path(@patient) %>
+    </td>
+  </tr>
+  </thead>
+
+  <tbody>
+    <td>Timestamp</td>
+    <td>Blood Sugar</td>
+    <td>Prescribed Insulin</td>
+    <td>Applied Insulin</td>
+    <td>Comments</td>
+    <% @dosages.each do |dosage| %>
+      <tr class="<%=cycle('list_line_odd', 'list_line_even') %>">
+        <td>
+          <%= dosage.timestamp %>
+        </td>
+        <td>
+          <%= dosage.blood_sugar_level %>
+        </td>
+        <td>
+          <%= dosage.prescribed_insulin %>
+        </td>
+        <td>
+          <%= dosage.applied_insulin %>
+        </td>
+        <td>
+          <%= dosage.comments %>
+        </td>
+        <td><%= link_to 'Show', patient_dosage_path(@patient, dosage) %></td>
+        <td><%= link_to 'Edit', edit_patient_dosage_path(@patient,dosage) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+

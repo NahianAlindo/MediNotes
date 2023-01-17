@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Timestamp:</strong>
+  <%= @dosage.timestamp %>
+</p>
+
+<p>
+  <strong>Blood sugar level:</strong>
+  <%= @dosage.blood_sugar_level %>
+</p>
+
+<p>
+  <strong>Prescribed insulin:</strong>
+  <%= @dosage.prescribed_insulin %>
+</p>
+
+<p>
+  <strong>Applied insulin:</strong>
+  <%= @dosage.applied_insulin %>
+</p>
+<p>
+  <strong>Comments:</strong>
+  <%= @dosage.comments %>
+</p>
+
+<%= link_to 'Edit', edit_patient_dosage_path([@patient, @dosage]) %>
+<%= link_to 'Back', [@patient, :dosages] %>

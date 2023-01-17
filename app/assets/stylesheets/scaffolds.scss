@@ -26,8 +26,21 @@ a:hover {
 th {
   padding-bottom: 5px; }
 
+tr.list_line_odd{
+  background-color: #effeef;
+}
+tr.list_line_even{
+  background-color: #ffffff;
+}
+
+td.center{
+  align-content: center;
+}
+
 td {
-  padding: 0 5px 7px; }
+  padding: 0 5px 7px;
+  text-align: center;
+}
 
 div.field,
 div.actions {
@@ -63,3 +76,12 @@ div.actions {
 
 label {
   display: block; }
+
+.center{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1{
+  text-align: center;
+}

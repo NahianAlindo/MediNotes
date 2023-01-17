@@ -1,0 +1,42 @@
+<%= form_with(model: [@patient, dosage], local: true) do |form| %>
+  <% if dosage.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(dosage.errors.count, "error") %> prohibited this dosage from being saved:</h2>
+
+      <ul>
+        <% dosage.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :timestamp %>
+    <%= form.datetime_select :timestamp %>
+  </div>
+
+  <div class="field">
+    <%= form.label :blood_sugar_level %>
+    <%= form.number_field :blood_sugar_level %>
+  </div>
+
+  <div class="field">
+    <%= form.label :prescribed_insulin %>
+    <%= form.number_field :prescribed_insulin %>
+  </div>
+
+  <div class="field">
+    <%= form.label :applied_insulin %>
+    <%= form.number_field :applied_insulin %>
+  </div>
+
+  <div class="field">
+    <%= form.label :comments %>
+    <%= form.text_area :comments %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

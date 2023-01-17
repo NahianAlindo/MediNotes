@@ -10,6 +10,19 @@
   </head>
 
   <body>
-    <%= yield %>
+
+  <section class="content">
+
+      <% if user_signed_in? %>
+        <nav>
+          <ul>
+            <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+          </ul>
+        </nav>
+      <% end %>
+    <main class='<%= controller.controller_name %>'>
+      <%= yield %>
+    </main>
+  </section>
   </body>
 </html>

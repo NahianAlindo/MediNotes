@@ -13,13 +13,15 @@ class Ability
       can :manage, :dashboard
     end
     if user.doctor_role?
-      can :manage, User
+      can :access, Patient
+      can :manage, Prescription
     end
     if user.nurse_role?
-      can :manage, User
+      can :manage, Patient
+      can :read, Prescription
       end
     if user.user_role?
-      can :manage, User
+      can :read, Patient
     end
 
   end

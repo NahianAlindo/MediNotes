@@ -1,0 +1,41 @@
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+
+<p>
+  <strong>Prescribed on:</strong>
+  <%= @prescription.prescribed_on %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @prescription.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @prescription.end_date %>
+</p>
+
+<p>
+  <strong>Prescribed insulin:</strong>
+  <%= @prescription.prescribed_insulin %>
+</p>
+
+<p>
+  <strong>Comments:</strong>
+  <%= @prescription.comments %>
+</p>
+
+<p>
+  <strong>Patient ID:</strong>
+  <%= @prescription.patient_id %>
+</p>
+
+<% if can? :manage, Prescription %>
+<%= link_to 'Edit', edit_patient_prescription_path(@patient,@prescription) %>
+<% end %>
+<% if can? :manage, Patient %>
+<%= link_to 'Apply Insulin', new_patient_dosage_path %>
+<% end %>
+<%= link_to 'Back', patient_prescriptions_path %>

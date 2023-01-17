@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  prescribed_on: 2023-01-17 11:12:04
+  start_date: 2023-01-17
+  end_date: 2023-01-17
+  prescribed_insulin: 1
+  comments: MyText
+  Patient: one
+
+two:
+  prescribed_on: 2023-01-17 11:12:04
+  start_date: 2023-01-17
+  end_date: 2023-01-17
+  prescribed_insulin: 1
+  comments: MyText
+  Patient: two

@@ -10,5 +10,10 @@
   <%= @patient.contact_number %>
 </p>
 
-<%= link_to 'Edit', edit_patient_path(@patient) %> |
+<%= link_to 'Edit', edit_patient_path(@patient) %>
 <%= link_to 'Back', patients_path %>
+<%= link_to "New dosage", new_patient_dosage_path(@patient) %>
+<%= link_to "Prescribe", new_patient_prescription_path(@patient) %>
+<% if @patient.dosages.count>0 %>
+  <%= link_to 'Dosage Data', [@patient, :dosages] %>
+<% end %>
