@@ -12,10 +12,14 @@
  *
  *= require_tree .
  *= require_self
+ *= require daterangepicker
  */
 body{
   margin: 0%;
+  text-align: center;
 }
+
+
 
 .content{
   ul {
@@ -84,3 +88,40 @@ a:hover, a:active {
 }
 
 
+input[type=text], select {
+  width: 18.3%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=email], input[type=password], input[type=number], textarea{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+form{
+  display: inline-block;
+}

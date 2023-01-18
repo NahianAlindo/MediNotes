@@ -12,6 +12,9 @@ gem 'puma', '~> 4.1'
 gem 'devise'
 gem 'rails_admin', git: 'https://github.com/sferik/rails_admin.git'
 gem 'cancancan'
+gem 'jquery-rails'
+gem 'momentjs-rails'
+gem 'bootstrap-daterangepicker-rails', git: 'https://github.com/jordanbrock/bootstrap-daterangepicker-rails.git', branch: 'master'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker

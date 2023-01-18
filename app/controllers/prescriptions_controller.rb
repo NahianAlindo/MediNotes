@@ -5,7 +5,7 @@ class PrescriptionsController < ApplicationController
 
   # GET /prescriptions or /prescriptions.json
   def index
-    @prescriptions = @patient.prescriptions
+    @prescriptions = @patient.prescriptions.order("prescribed_on DESC")
   end
 
   # GET /prescriptions/1 or /prescriptions/1.json

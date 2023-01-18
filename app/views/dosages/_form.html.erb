@@ -18,17 +18,18 @@
 
   <div class="field">
     <%= form.label :blood_sugar_level %>
-    <%= form.number_field :blood_sugar_level %>
+    <%= form.number_field :blood_sugar_level, min: 1, max:500  %>
   </div>
 
   <div class="field">
     <%= form.label :prescribed_insulin %>
-    <%= form.number_field :prescribed_insulin %>
+    <%= form.number_field :prescribed_insulin, min: 1 %>
   </div>
+
 
   <div class="field">
     <%= form.label :applied_insulin %>
-    <%= form.number_field :applied_insulin %>
+    <%= form.number_field :applied_insulin, min: 1%>
   </div>
 
   <div class="field">

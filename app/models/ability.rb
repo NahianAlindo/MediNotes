@@ -19,11 +19,14 @@ class Ability
     end
     if user.nurse_role?
       can :manage, Dosage
-      can :read, Prescription
-      end
-    if user.user_role?
       can :read, Patient
       can :read, Prescription
+
+
+      end
+    if user.user_role?
+      can :access, Patient
+      can :access, Prescription
       can :read, Dosage
     end
 

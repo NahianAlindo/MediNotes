@@ -1,5 +1,5 @@
 <h1>New Dosage</h1>
 
-<%= render 'form', dosage: @dosage %>
-
-<%= link_to 'Back', patient_dosages_path(@patient) %>
+<%= render 'form', dosage: @dosage, prescription: @prescription %>
+<br>
+<%= link_to 'Cancel', patient_path(@patient) %>

@@ -1,6 +1,13 @@
 <% if notice %>
 <p id="notice"><%= notice %></p>
 <% end %>
+<%= link_to 'Patient Data', patient_path(@patient) %>
+</p>
+<% if can? :manage, Dosage %>
+  <td>
+    <%= link_to 'New Dosage', new_patient_dosage_path %>
+  </td>
+<% end %>
 <p>
   <strong>Name:</strong>
   <%= @patient.name %>
@@ -9,30 +16,24 @@
   <strong>Contact Number:</strong>
   <%= @patient.contact_number %>
 </p>
-  <p>
-    <strong>Average Blood Sugar Level:</strong>
-    <%= @dosages.sum(:blood_sugar_level) / @dosages.count %>
-  </p>
-  <p>
-    <strong>Average Applied Insulin:</strong>
-    <%= @dosages.sum(:applied_insulin) / @dosages.count %>
-  </p>
 
 
 
 <h1>Dosages</h1>
+<div>
+  <%= form_tag patient_dosages_path, method: :get do %>
+    <%= datetime_field_tag 'search[date_from]', @search.date_from %>
+    <%= datetime_field_tag 'search[date_to]', @search.date_to %>
+    <%= submit_tag 'Search' %>
+  <% end %>
+</div>
+
 <table class="center" id="table">
   <thead>
-  <tr>
-    <% if can? :manage, Dosage %>
-    <td>
-      <%= link_to 'New Dosage', new_patient_dosage_path %>
-    </td>
-    <% end %>
-    <td>
-      <%= link_to 'Back', patient_path(@patient) %>
-    </td>
-  </tr>
+  <% if @dosages_count!=0 %>
+    <tr><td><strong>Average Blood Sugar:</strong> <%= @dosages.sum(:blood_sugar_level) / @dosages_count %></td></tr>
+    <tr><td><strong>Average Insulin Applied:</strong> <%= @dosages.sum(:applied_insulin) / @dosages_count %></td></tr>
+  <%end %>
   </thead>
 
   <tbody>
@@ -64,8 +65,9 @@
         <td><%= button_to 'Delete', [@patient,dosage], method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
       </tr>
+
     <% end %>
+
   </tbody>
 </table>
-
 

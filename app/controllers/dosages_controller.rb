@@ -1,11 +1,16 @@
 class DosagesController < ApplicationController
   load_and_authorize_resource
+
   before_action :set_patient
   before_action :set_dosage, only: %i[ show edit update destroy ]
 
   # GET /dosages or /dosages.json
   def index
-    @dosages = @patient.dosages
+    @search = DosageSearch.new(params[:search])
+    @date_from = @search.date_from
+    @date_to = @search.date_to
+    @dosages = @patient.dosages.where('timestamp BETWEEN ? AND ?', @date_from, @date_to).order("timestamp DESC")
+    @dosages_count = @dosages.count
   end
 
   # GET /dosages/1 or /dosages/1.json
@@ -16,6 +21,7 @@ class DosagesController < ApplicationController
   # GET /dosages/new
   def new
     @dosage = @patient.dosages.build
+    @prescription = @patient.prescriptions.last
     # @dosage = Dosage.new
   end
 
@@ -75,4 +81,6 @@ class DosagesController < ApplicationController
   def dosage_params
     params.require(:dosage).permit(:timestamp, :blood_sugar_level, :prescribed_insulin, :applied_insulin, :patient_id, :comments)
   end
+
+
 end

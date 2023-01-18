@@ -28,7 +28,7 @@
 
   <div class="field">
     <%= form.label :prescribed_insulin %>
-    <%= form.number_field :prescribed_insulin %>
+    <%= form.number_field :prescribed_insulin, min: 1 %>
   </div>
 
   <div class="field">

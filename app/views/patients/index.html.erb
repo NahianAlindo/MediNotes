@@ -1,6 +1,4 @@
-<% if can? :manage, User %>
-  <td><%= link_to 'Users', users_index_path, method: :get %></td>
-<% end %>
+
 <% if notice %>
 <p id="notice"><%= notice %></p>
 <% end %>
@@ -14,6 +12,7 @@
 <table id="table">
   <thead>
     <tr>
+      <th>Serial No.</th>
       <th>Name</th>
       <th>Contact number</th>
       <th colspan="3"></th>
@@ -23,6 +22,7 @@
   <tbody>
     <% @patients.each do |patient| %>
       <tr>
+        <td><%= patient.id %></td>
         <td><%= patient.name %></td>
         <td><%= patient.contact_number %></td>
         <td><%= link_to 'Show', patient %></td>

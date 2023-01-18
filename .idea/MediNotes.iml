@@ -44,6 +44,7 @@
     <orderEntry type="library" scope="PROVIDED" name="bcrypt (v3.1.18, rbenv: 2.6.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bindex (v0.8.1, rbenv: 2.6.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bootsnap (v1.15.0, rbenv: 2.6.5) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="bootstrap-daterangepicker-rails (v3.0.5@c111ad, rbenv: 2.6.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="builder (v3.2.4, rbenv: 2.6.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bundler (v2.4.1, rbenv: 2.6.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="byebug (v11.1.3, rbenv: 2.6.5) [gem]" level="application" />
@@ -59,6 +60,7 @@
     <orderEntry type="library" scope="PROVIDED" name="globalid (v1.0.0, rbenv: 2.6.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="i18n (v1.12.0, rbenv: 2.6.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jbuilder (v2.11.5, rbenv: 2.6.5) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="jquery-rails (v4.5.1, rbenv: 2.6.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="kaminari (v1.2.2, rbenv: 2.6.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="kaminari-actionview (v1.2.2, rbenv: 2.6.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="kaminari-activerecord (v1.2.2, rbenv: 2.6.5) [gem]" level="application" />
@@ -71,6 +73,7 @@
     <orderEntry type="library" scope="PROVIDED" name="method_source (v1.0.0, rbenv: 2.6.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mini_mime (v1.1.2, rbenv: 2.6.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="minitest (v5.17.0, rbenv: 2.6.5) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="momentjs-rails (v2.29.4.1, rbenv: 2.6.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="msgpack (v1.6.0, rbenv: 2.6.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="nested_form (v0.3.2, rbenv: 2.6.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="net-imap (v0.3.4, rbenv: 2.6.5) [gem]" level="application" />

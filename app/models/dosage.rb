@@ -1,7 +1,7 @@
 class Dosage < ApplicationRecord
   belongs_to :patient
   # before_save :set_applied_insulin
-  scope :ordered, -> { order(timestamp: :asc) }
+  scope :ordered, -> { order(timestamp: :desc) }
   private
   def set_applied_insulin
     if self.blood_sugar_level == 7
