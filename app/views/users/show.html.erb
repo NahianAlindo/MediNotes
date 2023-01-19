@@ -1,2 +1,31 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>SuperAdmin Role:</strong>
+  <%= @user.superadmin_role %>
+</p>
+
+<p>
+  <strong>Doctor Role:</strong>
+  <%= @user.doctor_role %>
+</p>
+
+<p>
+  <strong>Nurse Role:</strong>
+  <%= @user.nurse_role %>
+</p>
+
+<p>
+  <strong>User Role:</strong>
+  <%= @user.user_role %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %>
+<p>
+<%= link_to 'Back', users_path %>
+</p>

@@ -42,6 +42,7 @@
     <th>Prescribed Insulin</th>
     <th>Applied Insulin</th>
     <th>Comments</th>
+
     <% @dosages.each do |dosage| %>
       <tr class="<%=cycle('list_line_odd', 'list_line_even') %>">
         <td>
@@ -67,6 +68,7 @@
       </tr>
 
     <% end %>
+    <%= paginate @dosages %>
 
   </tbody>
 </table>

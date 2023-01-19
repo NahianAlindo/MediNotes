@@ -3,11 +3,13 @@
 <p id="notice"><%= notice %></p>
 <% end %>
 
-<% if can? :manage, Patient %>
-<%= link_to 'New Patient', new_patient_path %>
-<% end %>
-<h1>Patients</h1>
 
+<h1>Patients</h1>
+<% if can? :manage, Patient %>
+  <%= link_to 'New Patient', new_patient_path %>
+<% end %>
+<p>
+</p>
 
 <table id="table">
   <thead>
@@ -28,7 +30,7 @@
         <td><%= link_to 'Show', patient %></td>
         <% if can? :manage, Patient %>
         <td><%= link_to 'Edit', edit_patient_path(patient) %></td>
-        <td><%= link_to 'Delete', patient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= button_to 'Delete', patient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
       </tr>
     <% end %>

@@ -12,6 +12,13 @@
   <% end %>
 
   <div class="field">
+
+    <%= form.label :prescribed_insulin %>
+    <% options = [prescription.prescribed_insulin] %>
+    <%= form.select :prescribed_insulin, options %>
+  </div>
+
+  <div class="field">
     <%= form.label :timestamp %>
     <%= form.datetime_select :timestamp %>
   </div>
@@ -21,10 +28,6 @@
     <%= form.number_field :blood_sugar_level, min: 1, max:500  %>
   </div>
 
-  <div class="field">
-    <%= form.label :prescribed_insulin %>
-    <%= form.number_field :prescribed_insulin, min: 1 %>
-  </div>
 
 
   <div class="field">

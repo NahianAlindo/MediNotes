@@ -9,7 +9,7 @@ class DosagesController < ApplicationController
     @search = DosageSearch.new(params[:search])
     @date_from = @search.date_from
     @date_to = @search.date_to
-    @dosages = @patient.dosages.where('timestamp BETWEEN ? AND ?', @date_from, @date_to).order("timestamp DESC")
+    @dosages = @patient.dosages.where('timestamp BETWEEN ? AND ?', @date_from, @date_to).order("timestamp DESC").page(params[:page])
     @dosages_count = @dosages.count
   end
 

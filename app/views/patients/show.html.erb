@@ -26,6 +26,6 @@
   <%= link_to 'Dosage Data', [@patient, :dosages] %>
 <% end %>
 
-<% if can? :read, Prescription %>
+<% if can? :read, Prescription and @patient.prescriptions.count>0 %>
 <%= render partial: "prescription", locals: { patient: @patient } %>
 <% end %>

@@ -4,9 +4,9 @@
   <%= link_to new_user_session_path, class: 'login-button' do %>Sign in<% end %>
   <%= link_to('Register', new_user_registration_path)  %>
 <% elsif user_signed_in? %>
-  <% if can? :manage, Patient %>
+  <% if can? :access, Patient %>
     <%= link_to patients_url, class: 'login-button' do %>Go to App<% end %>
-  <% else %>
-    <%= link_to patient_path(Patient.find(1)), class: 'login-button' do %>Go to App<% end %>
+  <%# else %>
+<!--    <%#= link_to patient_path(Patient.find(1)), class: 'login-button' do %>Go to App<%# end %>-->
   <% end %>
 <% end %>
