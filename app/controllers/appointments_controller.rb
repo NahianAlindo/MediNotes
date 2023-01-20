@@ -1,4 +1,5 @@
 class AppointmentsController < ApplicationController
+  load_and_authorize_resource
   before_action :set_appointment, only: %i[ show edit update destroy ]
 
   # GET /appointments or /appointments.json
