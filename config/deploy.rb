@@ -31,7 +31,7 @@ namespace :puma do
       execute "mkdir /home/ubuntu/MediNotes/shared/log -p"
     end
   end
-  before :start, :make_dirs
+  before 'deploy:started', 'puma:make_dirs'
 end
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp

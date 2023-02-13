@@ -6,7 +6,7 @@
 # server "example.com", user: "deploy", roles: %w{app db web}, my_property: :my_value
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
-server '65.2.82.22', user: 'ubuntu', roles: %w{web app db}
+server '3.110.177.190', user: 'ubuntu', roles: %w{web app db}
 set :ssh_options, {
   forward_agent: true,
   auth_methods: %w[publickey],
