@@ -25,7 +25,7 @@ set :puma_workers, 0
 
 # Default value for :pty is false
 set :pty, true
-set :use_sudo, false
+set :use_sudo, true
 set :stage, :production
 set :deploy_via, :remote_cache
 set :deploy_to, "/home/ubuntu/#{fetch(:application)}"
