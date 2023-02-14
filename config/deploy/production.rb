@@ -8,11 +8,11 @@
 # server "db.example.com", user: "deploy", roles: %w{db}
 
 
-server '3.110.177.190', user: 'ubuntu', roles: [:web, :app, :db], primary:true
+server '3.90.110.94', user: 'ubuntu', roles: [:web, :app, :db], primary:true
 set :ssh_options, {
   forward_agent: true,
   auth_methods: %w[publickey],
-  keys: %w[/home/nascenia/Resources/server-keys/alindo.pem]
+  keys: %w[/home/nascenia/Resources/server-keys/test-nahian.pem]
 }
 # role-based syntax
 # ==================
