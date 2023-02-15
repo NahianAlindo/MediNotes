@@ -12,6 +12,12 @@ set :puma_threads, [4,16]
 set :puma_workers, 0
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
+# set :npm_flags, '--silent --no-progress'
+# set :npm_target_path, -> { release_path.join('client') }
+# set :npm_roles, :all
+#
+# append :linked_dirs, 'client/node_modules'
+# append :linked_dirs, 'public/packs'
 
 # Default deploy_to directory is /var/www/my_app_name
 # set :deploy_to, "/var/www/my_app_name"
